@@ -21,7 +21,7 @@ public class DrinksController {
     @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Drinks> getDrinks(){
        Drinks drink = new Drinks();
-        try{
+        try {
             drink = serviceDrinks.getDrinkOfTheDay();
         }catch (IOException exception) {}
         return new ResponseEntity<>(drink, HttpStatus.OK);
