@@ -23,7 +23,9 @@ public class DrinksController {
        Drinks drink = new Drinks();
         try {
             drink = serviceDrinks.getDrinkOfTheDay();
-        }catch (IOException exception) {}
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
         return new ResponseEntity<>(drink, HttpStatus.OK);
     }
 }
